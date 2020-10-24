@@ -17,9 +17,9 @@ if __name__ == "__main__":
     angle1 = math.pi/2
     angle2 = math.pi/3
     angle3 = 0
-    omega_table = 0.6625*degree
+    omega_table = 1.5*degree
     omega1 = 2*degree
-    omega2 = 4*degree
+    omega2 = 4.75*degree
     omega3 = 3*degree
 
     
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     turtle.ht()
     turtle.tracer(0,0)
 
-    for i in range(0,10000):
+    for i in range(0,50000):
         angle1 += omega1 + omega_table
         angle2 += omega2 + omega_table
         angle3 += omega3 + omega1 + omega_table
