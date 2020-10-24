@@ -52,14 +52,15 @@ def load_params(file_name):
 
 	return params
 
-def draw(params=None, file_name=None, increment=None, n_iters=10000):
+def draw(params=None, file_name=None):
 	if params:
 		pos1 = params["pos1"]
 		pos2 = params["pos2"]
-		r1, r2 = params["r1"], params["r2"]
+		r1, r2, r3 = params["r1"], params["r2"], params["r3"]
 		l, l1, l2 = params["l"], params["l1"], params["l2"]
-		angle_table, angle1, angle2 = params["angt"]*math.pi, params["ang1"]*math.pi, params["ang2"]*math.pi
-		omega_table, omega1, omega2 = params["omet"]*degree,  params["ome1"]*degree,  params["ome2"]*degree
+		angle_table, angle1, angle2, angle3 = params["angt"]*math.pi, params["ang1"]*math.pi, params["ang2"]*math.pi, params["ang3"]*math.pi
+		omega_table, omega1, omega2, omega3 = params["omet"]*degree,  params["ome1"]*degree,  params["ome2"]*degree,  params["ome3"]*degree
+		n_iters = params["n_iters"]
 
 	else:
 		pos1 = (10,200)
@@ -70,7 +71,6 @@ def draw(params=None, file_name=None, increment=None, n_iters=10000):
 		l1 = 9
 		l2 = 14
 		l = 30
-		degree = math.pi/180
 		angle_table = 0
 		angle1 = math.pi/2
 		angle2 = math.pi/3
@@ -79,6 +79,7 @@ def draw(params=None, file_name=None, increment=None, n_iters=10000):
 		omega1 = -4*degree
 		omega2 = 3*degree
 		omega3 = -5*degree
+		n_iters = 10000
 
 	turtle.penup()
 	turtle.ht()
@@ -143,7 +144,7 @@ def draw(params=None, file_name=None, increment=None, n_iters=10000):
 	if file_name:
 		turtle.getscreen().getcanvas().postscript(file="results/"+file_name+".ps")
 
-	time.sleep(1)
+	time.sleep(5)
 	# turtle.reset()
 	# turtle.Screen().exitonclick()
 
@@ -151,7 +152,10 @@ def draw(params=None, file_name=None, increment=None, n_iters=10000):
 if __name__ == "__main__":
 	bg_color("black")
 	turtle.pencolor("white")
-	# for file_name in ['9']:
-	# 	params = load_params(file_name)
-	draw(n_iters = 45000)
+	# for file_name in ['1', '2']:
+	params = load_params('1')
+	draw(params, '1')
+	turtle.pencolor((101, 152, 219))
+	params = load_params('2')
+	draw(params, '1')
 
