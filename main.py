@@ -63,22 +63,38 @@ def draw(params=None, file_name=None, increment=None, n_iters=10000):
 
 	else:
 		pos1 = (10,200)
-		pos2 = (20,190)
-		r1 = 5
-		r2 = 3
-		r3 = 2
-		l1 = 9
-		l2 = 14
-		l = 30
+		pos2 = (50,150)
+		r1 = 20
+		r2 = 10
+		r3 = 5
+		l1 = 65
+		l2 = 45
+		l = 100
 		degree = math.pi/180
 		angle_table = 0
 		angle1 = math.pi/2
 		angle2 = math.pi/3
 		angle3 = 0
 		omega_table = .1*degree
-		omega1 = -4*degree
-		omega2 = 3*degree
+		omega1 = 5.5*degree
+		omega2 = 1*degree
 		omega3 = -5*degree
+
+	#checks for values
+	#minimum/maximum hypotnuse
+	hyp = math.sqrt((pos1[0] - pos2[0])*(pos1[0] - pos2[0]) + (pos1[1] - pos2[1])*(pos1[1] - pos2[1]))
+	minh = hyp - r1 - r2 - r3
+	maxh = hyp + r1 + r2 + r3
+	if(l1 + l2 < maxh):
+		print("Nodes are too far apart")
+		exit(-1)
+	if(l1 + minh < l2):
+		print("l2 is too long")
+		exit(-1)
+	if(l2 + minh < l1):
+		print("l1 is too long")
+		exit(-1)
+
 
 	turtle.penup()
 	turtle.ht()
