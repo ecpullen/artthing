@@ -4,30 +4,30 @@ import math
 
 
 if __name__ == "__main__":
-    pos1 = (1,10)
-    pos2 = (145,70)
-    r1 = 20
-    r2 = 10
-    r3 = 3
-    l1 = 90
-    l2 = 100
-    l = 45
+    pos1 = (10,200)
+    pos2 = (20,190)
+    r1 = 5
+    r2 = 3
+    r3 = 2
+    l1 = 9
+    l2 = 14
+    l = 30
     degree = math.pi/180
     angle_table = 0
     angle1 = math.pi/2
     angle2 = math.pi/3
     angle3 = 0
-    omega_table = 1.5*degree
-    omega1 = 2*degree
-    omega2 = 4.75*degree
-    omega3 = 3*degree
+    omega_table = .1*degree
+    omega1 = -4*degree
+    omega2 = 3*degree
+    omega3 = -5*degree
 
     
     turtle.penup()
     turtle.ht()
     turtle.tracer(0,0)
 
-    for i in range(0,50000):
+    for i in range(0,10000):
         angle1 += omega1 + omega_table
         angle2 += omega2 + omega_table
         angle3 += omega3 + omega1 + omega_table
