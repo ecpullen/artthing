@@ -8,16 +8,19 @@ if __name__ == "__main__":
     pos2 = (145,70)
     r1 = 20
     r2 = 10
-    l1 = 82
+    r3 = 3
+    l1 = 90
     l2 = 100
     l = 45
     degree = math.pi/180
     angle_table = 0
     angle1 = math.pi/2
     angle2 = math.pi/3
+    angle3 = 0
     omega_table = 0.6625*degree
     omega1 = 2*degree
     omega2 = 4*degree
+    omega3 = 3*degree
 
     
     turtle.penup()
@@ -27,6 +30,7 @@ if __name__ == "__main__":
     for i in range(0,10000):
         angle1 += omega1 + omega_table
         angle2 += omega2 + omega_table
+        angle3 += omega3 + omega1 + omega_table
         angle_table += omega_table
 
         disc1 = math.atan(pos1[1]/pos1[0])
@@ -36,7 +40,8 @@ if __name__ == "__main__":
         p1 = (dis1*math.cos(disc1+angle_table),dis1*math.sin(disc1+angle_table))
         p2 = (dis2*math.cos(disc2+angle_table),dis2*math.sin(disc2+angle_table))
 
-        pivot1 = (p1[0] + r1*math.cos(angle1),p1[1] + r1*math.sin(angle1))
+        pivotsub1 = (p1[0] + r1*math.cos(angle1),p1[1] + r1*math.sin(angle1))
+        pivot1 = (pivotsub1[0] + r3*math.cos(angle3),pivotsub1[1] + r3*math.sin(angle3))
         pivot2 = (p2[0] + r2*math.cos(angle2),p2[1] + r2*math.sin(angle2))
 
         c = math.sqrt((pivot2[1] - pivot1[1])*(pivot2[1] - pivot1[1]) + (pivot2[0] - pivot1[0])*(pivot2[0] - pivot1[0]))
