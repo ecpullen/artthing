@@ -19,7 +19,7 @@ if __name__ == "__main__":
     angle3 = 0
     omega_table = .1*degree
     omega1 = -4*degree
-    omega2 = 3*degree
+    omega2 = 4*degree
     omega3 = -5*degree
 
     
