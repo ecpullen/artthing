@@ -4,8 +4,8 @@ import math
 
 
 if __name__ == "__main__":
-    pos1 = (100,20)
-    pos2 = (-44,-40)
+    pos1 = (1,10)
+    pos2 = (145,70)
     r1 = 20
     r2 = 10
     l1 = 82
@@ -15,14 +15,14 @@ if __name__ == "__main__":
     angle_table = 0
     angle1 = math.pi/2
     angle2 = math.pi/3
-    omega_table = 0.1*degree
+    omega_table = 0.6625*degree
     omega1 = 2*degree
-    omega2 = 3*degree
+    omega2 = 4*degree
 
     
     turtle.penup()
     turtle.ht()
-    turtle.speed(10000)
+    turtle.tracer(0,0)
 
     for i in range(0,10000):
         angle1 += omega1 + omega_table
@@ -72,4 +72,5 @@ if __name__ == "__main__":
         # turtle.dot(3,'black')
         turtle.pendown()
 
+    turtle.update()
     turtle.Screen().exitonclick()
